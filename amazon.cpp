@@ -118,12 +118,8 @@ int main(int argc, char* argv[])
             }
             else if ( cmd == "VIEWCART") {
                 string username;
-                if (ss >> username) {
-                    User *user = ds.getUser(username);
-                    if (user == nullptr) {
-                        cout << "Invalid username" << endl;
-                        break;
-                    }
+                User *user;
+                if (ss >> username && (user = ds.getUser(username)) != nullptr){
                     vector<Product *> cart = ds.getCart(username);
                     for (unsigned int i = 0; i < cart.size(); i++) {
                         cout << "Item " << i + 1 << endl;
