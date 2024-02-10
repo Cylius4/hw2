@@ -92,7 +92,7 @@ public:
     std::string categoryID();
 
 protected:
-    Product* makeProduct();
+    Product *makeProduct();
 
 private:
     std::string size_;
