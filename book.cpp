@@ -7,7 +7,7 @@
 
 std::set <std::string> Book::keywords() const {
     std::set<std::string> keywords = setUnion(parseStringToWords(name_), parseStringToWords(author));
-    keywords.insert(isbn);
+    keywords.insert(convToLower(isbn));
     return keywords;
 }
 
