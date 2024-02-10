@@ -51,7 +51,7 @@ void MyDataStore::dump(std::ostream& ofile) {
     ofile << "</products>" << std::endl;
     ofile << "<users>" << std::endl;
     for (unsigned int i = 0; i < users.size(); i++) {
-        ofile << users[i]->getName() << " " << users[i]->getBalance() << std::endl;
+        users[i]->dump(ofile);
     }
     ofile << "</users>" << std::endl;
 }
