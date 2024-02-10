@@ -6,6 +6,15 @@
 #include "util.h"
 #include <algorithm>
 
+MyDataStore::~MyDataStore() {
+    for (unsigned int i = 0; i < products.size(); i++) {
+        delete products[i];
+    }
+    for (unsigned int i = 0; i < users.size(); i++) {
+        delete users[i];
+    }
+}
+
 void MyDataStore::addProduct(Product* p) {
     products.push_back(p);
     std::set<std::string> keys = p->keywords();
